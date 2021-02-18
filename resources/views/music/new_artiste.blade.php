@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     
-    
+     
 
     <div class="py-12">
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
@@ -20,22 +20,22 @@
                             <div class="grid grid-cols-6 gap-6">
                               <div class="col-span-6 sm:col-span-3">
                                 <label for="full_name" class="block text-sm font-medium text-gray-700">Full name</label>
-                                <input type="text" name="full_name" id="full_name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <input type="text" name="full_name" id="full_name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                               </div> 
               
                               <div class="col-span-6 sm:col-span-3">
                                 <label for="stage_name" class="block text-sm font-medium text-gray-700">Stage Name</label>
-                                <input type="text" name="stage_name" id="stage_name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <input type="text" name="stage_name" id="stage_name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                               </div>
                 
                               <div class="col-span-6">
                                 <label for="dp" class="block text-sm font-medium text-gray-700">Display Picture</label>
-                                <input type="file" name="dp" id="dp" class="mt-1 file-input focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <input type="file" name="dp" id="dp" class="mt-1 file-input focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                               </div>
               
                               <div class="col-span-6">
                                 <label for="bio" class="block text-sm font-medium text-gray-700">Bio</label>
-                                <textarea name="bio" id="bio" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
+                                <textarea name="bio" id="bio" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required></textarea>
                               </div>
 
                             </div>

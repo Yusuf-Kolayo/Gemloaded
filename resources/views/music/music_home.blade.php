@@ -10,7 +10,7 @@
         Add New Artiste
         </a> 
 
-        <x-alert />
+    
     </x-slot>
 
     <div class="py-12">

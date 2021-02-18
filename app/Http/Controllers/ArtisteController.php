@@ -41,24 +41,36 @@ class ArtisteController extends Controller
      */
     public function store(Request $request)
     {
-        $data = request()->validate([
-            'full_name' => 'required',
-            'stage_name' => 'required',
-            'dp' => ['required', 'image'],
-            'bio' => 'required',
-        ]); 
 
-        $imagePath = request('dp')->store('artiste_pics', 'public');
+       try {
+            
 
-        auth()->user()->artiste()->create([
-            'full_name' => $data['full_name'],
-            'stage_name' => $data['stage_name'], 
-            'dp' => $imagePath,
-            'bio' => $data['bio'],
-            'creator_id' => auth()->user()->id
-        ]);
+            $data = request()->validate([
+                'full_name' => 'required',
+                'stage_name' => 'required',
+                'dp' => ['required', 'image'],
+                'bio' => 'required',
+            ]); 
+    
+            $imagePath = request('dp')->store('artiste_pics', 'public');
+    
+            auth()->user()->artiste()->create([
+                'full_name' => $data['full_name'],
+                'stage_name' => $data['stage_name'], 
+                'dp' => $imagePath,
+                'bio' => $data['bio'],
+                'creator_id' => auth()->user()->id
+            ]);
+    
+            return redirect()->route('music.index')->with('success', 'New Artiste Created!');
 
-        return redirect()->route('music.index')->with('success', 'Artiste Created!');
+
+         } catch (\Exception $e) { 
+            // It's actually a QueryException but this works too
+           if ($e->getCode() == 23000) {   return redirect()->route('artiste.create')->with('error', 'Error: An entry that can conflict with pre-existing records detected, pls modify your entries ...');  }
+           
+         }
+   
     }
 
     /**

@@ -42,6 +42,6 @@ class User extends Authenticatable
     ];
 
     public function artiste() {
-        return $this->hasMany('App\Models\Artiste', 'id');
+        return $this->hasMany('App\Models\Artiste', 'creator_id');
     }
 }
